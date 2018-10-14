@@ -1,7 +1,17 @@
-#include "seriescol.h"
-int SeriesCol::GetLast(){
-	return b[b.size()-1];
+#include "SeriesCollection.h"
+#include <iostream>
+using namespace std;
+SeriesCollection::SeriesCollection(){
+	series.clear(); 
 }
-void SeriesCol::AddB(int value){
-	b.push_back(value);
+void SeriesCollection::show(){
+	for(int x=0;x<series.size();x++){
+		cout<<x+1<<". "<<series[x].getTitle()<<endl;
+	}
+}
+void SeriesCollection::Add(Series s){
+	series.push_back(s);
+}
+void SeriesCollection::operator+=(Series s){
+	Add(s);
 }

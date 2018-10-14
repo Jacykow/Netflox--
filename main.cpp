@@ -1,13 +1,16 @@
 #include <iostream>
-#include "seriescol.h"
-#include <vector>
+#include "SeriesCollection.h"
+//#include "series.h"
 using namespace std;
 
 int main() {
 	
-	SeriesCol sc = SeriesCol();
-	sc.AddB(3);
-	cout<<sc.GetLast();
+	Series s = Series();
+	
+	SeriesCollection sc = SeriesCollection();
+	sc+=s;
+	sc.show();
+	
 	
 	return 0;
 }

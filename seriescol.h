@@ -2,14 +2,23 @@
 #ifndef SERIESCOL_H
 #define SERIESCOL_H
 #include <vector>
+#include "series.h"
 using namespace std;
-class SeriesCol{
+class SeriesCollection : vector<Series>{
 	private:
-		vector<int> b;
+		string fileName;
+		void load();
+		void save();
 	public:
-		void AddB(int b);
-		int GetLast();
+		SeriesCollection(string file);
+		bool showOptions();
+		void addSeries(Series s);
+		void operator+=(Series s);
+		void removeSeries(string name);
+		void operator-=(string name);
+		void showAll();
+		void showStats();
+		void showRecommendations(int amount);
 };
-
 #endif
 
