@@ -19,7 +19,7 @@ ObjectOutput=
 LogOutput=
 LogOutputEnabled=0
 OverrideOutput=0
-OverrideOutputName=
+OverrideOutputName=Series Sam.exe
 HostApplication=
 UseCustomMakefile=0
 CustomMakefile=
@@ -29,7 +29,7 @@ IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=0000000000000000000000000
-UnitCount=4
+UnitCount=5
 
 [VersionInfo]
 Major=1
@@ -82,6 +82,16 @@ BuildCmd=$(CPP) -c seriescol.cpp -o seriescol.o $(CXXFLAGS)
 
 [Unit4]
 FileName=series.h
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit5]
+FileName=series.cpp
 CompileCpp=1
 Folder=
 Compile=1
