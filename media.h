@@ -1,15 +1,15 @@
-#ifndef SERIES_H
-#define SERIES_H
+#ifndef MEDIA_H
+#define MEDIA_H
 #include <string>
 using namespace std;
-class Series{
+class Media{
 	private:
 		string title;
 		int length;
 		int score;
 		string description;
 	public:
-		Series();
+		Media();
 		void setTitle(string value);
 		string getTitle();
 };

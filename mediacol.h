@@ -1,19 +1,19 @@
-//Series collection
-#ifndef SERIESCOL_H
-#define SERIESCOL_H
+//Media collection
+#ifndef MEDIACOL_H
+#define MEDIACOL_H
 #include <vector>
-#include "series.h"
+#include "media.h"
 using namespace std;
-class SeriesCollection : vector<Series>{
+class MediaCollection : public vector<Media*>{
 	private:
 		string fileName;
 		void load();
 		void save();
 	public:
-		SeriesCollection(string file);
+		MediaCollection(string file);
 		bool showOptions();
-		void addSeries(Series s);
-		void operator+=(Series s);
+		void addSeries(Media* s);
+		void operator+=(Media* s);
 		void removeSeries(string name);
 		void operator-=(string name);
 		void showAll();

@@ -1,6 +1,6 @@
 [Project]
-FileName=Series Sam.dev
-Name=Series Sam
+FileName=Netflox.dev
+Name=Netflox
 Type=1
 Ver=2
 ObjFiles=
@@ -61,7 +61,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit2]
-FileName=seriescol.h
+FileName=media.cpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -71,17 +71,17 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit3]
-FileName=seriescol.cpp
+FileName=media.h
 CompileCpp=1
 Folder=
 Compile=1
 Link=1
 Priority=1000
 OverrideBuildCmd=0
-BuildCmd=$(CPP) -c seriescol.cpp -o seriescol.o $(CXXFLAGS)
+BuildCmd=
 
 [Unit4]
-FileName=series.h
+FileName=mediacol.cpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -91,7 +91,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit5]
-FileName=series.cpp
+FileName=mediacol.h
 CompileCpp=1
 Folder=
 Compile=1

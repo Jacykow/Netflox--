@@ -1,15 +1,15 @@
 #include <iostream>
-#include "SeriesCollection.h"
-//#include "series.h"
+#include "mediacol.h"
+#include <new>
 using namespace std;
 
 int main() {
 	
-	Series s = Series();
+	Media* s = new Media();
 	
-	SeriesCollection sc = SeriesCollection();
+	MediaCollection sc = MediaCollection("data.txt");
 	sc+=s;
-	sc.show();
+	sc.showAll();
 	
 	
 	return 0;
