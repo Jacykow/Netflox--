@@ -1,10 +1,9 @@
-#include <iostream>
 #include "mediacol.h"
 using namespace std;
 
 int main() {
 	MediaCollection sc = MediaCollection("data.txt");
-	sc.addRandomMedia(10);
+	sc.addRandomMedia(5);
 	while(sc.menu());
 	return 0;
 }

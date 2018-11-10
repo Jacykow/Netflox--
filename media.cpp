@@ -1,32 +1,49 @@
 #include "media.h"
 using namespace std;
 
-Media::Media(string name, bool fillInfo){
-	title = name;
+Media::Media(string title, bool fillInfo){
+	this->title = title;
 	rating = -1;
 	if(fillInfo){
-		fillInfoByName();
+		cout<<endl<<"HERE1"<<endl;
+		fillInfoByTitle();
 	}
 }
-void Media::fillInfoByName(){
+void Media::fillInfoByTitle(){
 	srand(titleHash());
-	length = 400 + rand()%400;
-	score = rand()%11;
+	cout<<endl<<"HERE2"<<endl;
+	duration = 75 + rand()%125;
+	score = 1+rand()%10;
 	description = "Something to watch anywhere, at any time, with anyone.";
 }
 string Media::getInfo(){
 	string info = "\t";
 	info.append(title);
-	info.append("\nDuration:\t");
-	info.append(to_string(length));
-	info.append(" minutes\nRating:  \t");
+	info.append("\nGlobal Rating:\t");
 	info.append(to_string(score));
-	info.append(" / 10\nDescription:\t");
+	info.append("/10\n");
+	if(rating != -1){
+		info.append("Your Rating:\t");
+		info.append(to_string(rating));
+		info.append("/10\n");
+	}
+	info.append(additionalInfo());
+	info.append("\nDescription:\t");
 	info.append(description);
+	return info;
+}
+string Media::additionalInfo(){
+	string info = "";
+	info.append("Duration:\t");
+	info.append(to_string(duration));
+	info.append(" minutes.");
 	return info;
 }
 unsigned int Media::titleHash(){
 	return hashFromString(title);
+}
+string Media::getType(){
+	return "Unknown";
 }
 
 unsigned int Media::hashFromString(string value){
