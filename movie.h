@@ -7,7 +7,9 @@ using namespace std;
 class Movie : public Media{
 	private:
 		string additionalInfo();
+		int budget;
 	public:
+		int getBudget(){ return budget;}
 		Movie(string title) : Media(title){ }
 		void fillInfoByTitle();
 		string getType();

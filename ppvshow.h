@@ -6,8 +6,10 @@ using namespace std;
 
 class PPVShow : public Media{
 	private:
+		int popularity;
 		string additionalInfo();
 	public:
+		int getPopularity(){ return popularity;}
 		PPVShow(string title) : Media(title){ }
 		void fillInfoByTitle();
 		string getType();

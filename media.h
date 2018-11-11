@@ -12,12 +12,13 @@ class Media{
 		int IMDbRating;
 		int userScore;
 		unsigned int hashFromString(string value);
-		virtual string additionalInfo();
 		string description;
 		int duration;
 	protected:
 		setDuration(int value){ duration = value;}
 		setDescription(string value){ description = value;}
+		
+		virtual string additionalInfo();
 	public:
 		Media(string title);
 		void setTitle(string value){ title = value;}
