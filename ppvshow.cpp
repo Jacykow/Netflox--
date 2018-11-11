@@ -7,7 +7,7 @@ void PPVShow::fillInfoByTitle(){
 }
 string PPVShow::additionalInfo(){
 	string info = Media::additionalInfo();
-	info.append("\nCost:\t");
+	info.append("\nCost:   \t");
 	info.append(to_string(getPopularity() * getDuration() / 10));
 	info.append(".");
 	info.append(to_string(getPopularity() * getDuration() % 10));

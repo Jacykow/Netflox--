@@ -78,7 +78,10 @@ void MediaCollection::showAll(){
 	}
 }
 void MediaCollection::addWithUser(){
-	string title = getFromInput<string>("Enter the title: ");
+	cout<<"Enter the title: ";
+	string title;
+	getline(cin,title);
+	getline(cin,title);
 	cout<<"What king of media is "<<title<<"?"<<endl;
 	cout<<"(1) No idea"<<endl;
 	cout<<"(2) Some series"<<endl;
