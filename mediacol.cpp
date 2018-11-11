@@ -1,5 +1,6 @@
 #include "mediacol.h"
 using namespace std;
+
 MediaCollection::MediaCollection(string file){
 	fileName = file;
 }
@@ -94,17 +95,17 @@ void MediaCollection::rateWithUser(){
 		exitWithMessage("Out of range :(");
 		return;
 	}
-	int rating = getFromInput<int>("Enter Your rating on a 1-10 scale: ");
-	if(rating == 0){
+	int userScore = getFromInput<int>("Enter Your userScore on a 1-10 scale: ");
+	if(userScore == 0){
 		exitWithMessage("Going back to the menu...");
 		return;
 	}
-	if(rating < 1 || rating > 10){
+	if(userScore < 1 || userScore > 10){
 		exitWithMessage("Out of range :(");
 		return;
 	}
-	this->at(index-1)->setRating(rating);
-	cout<<"Rated "<<this->at(index-1)->getTitle()<<" at "<<rating<<"/10";
+	this->at(index-1)->setUserScore(userScore);
+	cout<<"Rated "<<this->at(index-1)->getTitle()<<" at "<<userScore<<"/10";
 	exitWithMessage("");
 }
 void MediaCollection::showDetailsWithUser(){
@@ -125,8 +126,8 @@ void MediaCollection::showRecommendations(){
 	exitWithMessage("There is a new season of Galactic Encounters! Watch it now!");
 }
 
-
 void MediaCollection::add(Media* s){
+	s->fillInfoByTitle();
 	this->push_back(s);
 }
 void MediaCollection::operator+=(Media* s){
@@ -140,7 +141,7 @@ void MediaCollection::addRandomMedia(int amount){
 		title.append(to_string(t));
 		title.append(" Episode ");
 		title.append(to_string(x+1));
-		switch((t+x)%5+1){
+		switch((t+x)%7+1){
 			case 1:
 				this->add(new Media(title));
 				break;
@@ -148,12 +149,18 @@ void MediaCollection::addRandomMedia(int amount){
 				this->add(new Series(title));
 				break;
 			case 3:
-				this->add(new Media(title));
+				this->add(new Romcom(title));
 				break;
 			case 4:
-				this->add(new Media(title));
+				this->add(new Drama(title));
 				break;
 			case 5:
+				this->add(new Anime(title));
+				break;
+			case 6:
+				this->add(new Media(title));
+				break;
+			case 7:
 				this->add(new Media(title));
 				break;
 		}

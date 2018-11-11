@@ -4,6 +4,11 @@
 #include <vector>
 #include "media.h"
 #include "series.h"
+#include "romcom.h"
+#include "drama.h"
+#include "anime.h"
+#include "ppvshow.h"
+#include "movie.h"
 #include <iostream>
 #include <new>
 #include <time.h>

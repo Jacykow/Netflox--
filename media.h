@@ -9,23 +9,27 @@ using namespace std;
 class Media{
 	private:
 		string title;
-		int score;
-		string description;
-		int rating;
+		int IMDbRating;
+		int userScore;
 		unsigned int hashFromString(string value);
 		virtual string additionalInfo();
-	protected:
+		string description;
 		int duration;
+	protected:
+		setDuration(int value){ duration = value;}
+		setDescription(string value){ description = value;}
 	public:
-		Media(string title, bool fillInfo = true); //X
+		Media(string title);
 		void setTitle(string value){ title = value;}
 		string getTitle(){ return title;}
-		int getScore(){ return score;}
+		int getIMDbRating(){ return IMDbRating;}
 		int getDuration(){ return duration;}
-		void setRating(int value){ rating = value;};
+		void setUserScore(int value){ userScore = value;}
+		int getUserScore(){	return userScore;}
 		unsigned int titleHash();
 		string getInfo();
-		//virtual...
+		string getDescription(){ return description;}
+		
 		virtual void fillInfoByTitle();
 		virtual string getType();
 };

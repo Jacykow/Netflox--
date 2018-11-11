@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o media.o mediacol.o series.o
-LINKOBJ  = main.o media.o mediacol.o series.o
+OBJ      = main.o media.o mediacol.o series.o romcom.o drama.o anime.o ppvshow.o movie.o
+LINKOBJ  = main.o media.o mediacol.o series.o romcom.o drama.o anime.o ppvshow.o movie.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -35,3 +35,18 @@ mediacol.o: mediacol.cpp
 
 series.o: series.cpp
 	$(CPP) -c series.cpp -o series.o $(CXXFLAGS)
+
+romcom.o: romcom.cpp
+	$(CPP) -c romcom.cpp -o romcom.o $(CXXFLAGS)
+
+drama.o: drama.cpp
+	$(CPP) -c drama.cpp -o drama.o $(CXXFLAGS)
+
+anime.o: anime.cpp
+	$(CPP) -c anime.cpp -o anime.o $(CXXFLAGS)
+
+ppvshow.o: ppvshow.cpp
+	$(CPP) -c ppvshow.cpp -o ppvshow.o $(CXXFLAGS)
+
+movie.o: movie.cpp
+	$(CPP) -c movie.cpp -o movie.o $(CXXFLAGS)

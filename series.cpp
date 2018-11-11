@@ -1,24 +1,23 @@
 #include "series.h"
-#include "media.h"
 
 void Series::fillInfoByTitle(){
-	cout<<endl<<"HERE3"<<endl;
 	Media::fillInfoByTitle();
-	cout<<endl<<"HERE4"<<endl;
 	seasons = 1 + (rand()%5) * (rand()%5);
 	episodesPerSeason = 3 + (rand()%8) * (rand()%8);
-	duration = 20 + rand()%60;
+	setDuration(20 + rand()%60);
+	setDescription("The sci-fi medium-budget psychology-horror of the week.");
 }
 string Series::additionalInfo(){
 	string info = "";
 	info.append("Seasons:\t");
 	info.append(to_string(seasons));
-	info.append("\nEpisodes:\t");
+	info.append("\nAvg. Episodes:\t");
 	info.append(to_string(episodesPerSeason));
-	info.append("\nSeasons:\t");
-	info.append(to_string(duration));
-	info.append("\nTotal minutes:\t");
-	info.append(to_string(duration * episodesPerSeason * seasons));
+	info.append("\nAvg. Minutes:\t");
+	info.append(to_string(getDuration()));
+	info.append("\nTotal time:\t");
+	info.append(to_string((getDuration() * getEpisodesPerSeason() * getSeasons())/60));
+	info.append(" hours");
 	return info;
 }
 string Series::getType(){
