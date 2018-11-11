@@ -10,6 +10,7 @@ class PPVShow : public Media{
 		string additionalInfo();
 	public:
 		int getPopularity(){ return popularity;}
+		bool isLiveSoon();
 		PPVShow(string title) : Media(title){ }
 		void fillInfoByTitle();
 		string getType();

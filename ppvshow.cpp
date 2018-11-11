@@ -17,3 +17,6 @@ string PPVShow::additionalInfo(){
 string PPVShow::getType(){
 	return "PPVShow";
 }
+bool PPVShow::isLiveSoon(){
+	return titleHash()%2;
+}

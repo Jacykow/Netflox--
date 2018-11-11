@@ -36,6 +36,7 @@ class MediaCollection : public vector<Media*>{
 		void addRandomMedia(int amount);
 		void load();
 		void save();
+		void showAlerts();
 };
 #endif
 

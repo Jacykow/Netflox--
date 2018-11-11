@@ -51,6 +51,24 @@ bool MediaCollection::menu(){
 MediaCollection::~MediaCollection(){
 	save();
 }
+void MediaCollection::showAlerts(){
+	bool found = false;
+	for(int x=0;x<this->size();x++){
+		if(this->at(x)->getType()=="PPVShow" && dynamic_cast<PPVShow*>(this->at(x))->isLiveSoon()){
+			if(!found){
+				cout<<"The following shows from your list will start soon:\n";
+				found = true;
+			}
+			cout<<"- "<<this->at(x)->getTitle()<<endl;
+		}
+	}
+	if(!found){
+		cout<<"None of your shows are starting soon. Maybe add some more?\n";
+	}
+	else{
+		cout<<endl;
+	}
+}
 
 void MediaCollection::showAll(){
 	system("cls");
